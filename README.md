@@ -8,7 +8,7 @@ This is the color palette.
 
 ![color palette image](https://raw.githubusercontent.com/Jerry-G/Image-Paletter/master/demo/16palette.png)
 
-Using this color palette it is possible these are the results.
+Using this color palette these are the results.
 
 ![image of cows](https://raw.githubusercontent.com/Jerry-G/Image-Paletter/master/demo/cows.png)
 

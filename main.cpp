@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
       float minima = 1e16;
       float minima_color = 0;
       uint8_t color[3];
-      for (int col = 0; col < 0xF; col++)
+      for (int col = 0; col <= 0xF; col++)
       {
         nibbletrgb(color, col);
         float d = (dist(red, grn, blu, color[0], color[1], color[2]));

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Jerry-G/Image-Paletter/master/demo/paletter.png">
+</p>
+
 # Image Paletter
 
 Image Paletter is a tool to recreate an image using only colors in a defined color palette.

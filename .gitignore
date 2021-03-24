@@ -1,4 +1,4 @@
-main
-*.o
-out/
+/target
+Cargo.lock
 in/
+out/

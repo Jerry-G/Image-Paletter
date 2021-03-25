@@ -28,9 +28,8 @@ fn dist(c1: &image::Rgb<u8>, c2: &image::Rgb<u8>) -> f64 {
 
 // Take in a string that has a hex rgb value and return an Rgb
 fn hex_to_rgb(str: &str) -> Result<Rgb<u8>, String> {
-    // expect the color to be exactly 6 chars in length
-    // a color with the hash symbol ( #FFFFFF ) will not be accepted
-    if str.len() != 6 {
+    // str can be length 6 `FEFEFE` or 7 `#FefEfe`
+    if !(str.len() == 6 || str.len() == 7) {
         return Err(format!("unable to interpret {:?} as color", &str));
     }
 
@@ -38,12 +37,16 @@ fn hex_to_rgb(str: &str) -> Result<Rgb<u8>, String> {
     let mut r = "".to_owned();
     let mut g = "".to_owned();
     let mut b = "".to_owned();
+    let first_index = if str.len() == 6 { 0 } else { 1 };
     for (i, c) in str.chars().enumerate() {
-        if i <= 1 {
+        if i == first_index - 1 && c == '#' {
+            continue;
+        }
+        if i <= first_index + 1 {
             r.push_str(&c.to_string());
-        } else if i <= 3 {
+        } else if i <= first_index + 3 {
             g.push_str(&c.to_string());
-        } else if i <= 5 {
+        } else if i <= first_index + 5 {
             b.push_str(&c.to_string());
         }
     }
